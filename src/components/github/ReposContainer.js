@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { fetchRepos } from '../../service/repos-api'
 import ReposList from './ReposList'
-
+import { Row,Input,Navbar,NavItem,Icon } from 'react-materialize'
+import './ReposContainer.css';
 class ReposContainer extends Component {
   constructor(props) {
     super(props)
@@ -27,17 +28,17 @@ class ReposContainer extends Component {
   //
   render() {
     return (
-      <div>
-        <h1>Repos</h1>
+      <Row>
+        <Navbar brand='Github Repositories' right></Navbar>
         <form action="#" onSubmit={this.submitHandler}>
-          <input
-            onChange={this.changeHandler}
-            style={{width: '250px'}}
-            type="search"
-            placeholder="Informe usuário e tecle ENTER"/>
+          <Input 
+            s={24} 
+            type="text" 
+            label="Usuario" 
+            onChange={this.changeHandler} />
         </form>
         <ReposList repos={this.state.repos}></ReposList>
-      </div>
+      </Row>
     )
   }
 }

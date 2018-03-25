@@ -1,11 +1,16 @@
 import React from 'react'
+import { Collection,CollectionItem } from 'react-materialize'
 
 const ReposList = props => {
-  return (<ul>
-    {props.repos.map(repo => (
-      <li key={repo.id}>{repo.name}</li>
-    ))}
-  </ul>)
+  return (
+    <Collection>
+      {
+        props.repos.map(repo => (
+          <CollectionItem key={repo.id}>{repo.name}</CollectionItem>
+        ))
+      }
+    </Collection>
+  )
 }
 
 export default ReposList
