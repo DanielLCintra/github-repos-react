@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { fetchRepos } from '../../service/repos-api'
 import ReposList from './ReposList'
-import { Row,Input,Navbar,NavItem,Icon } from 'react-materialize'
+import { Row,Input,Navbar } from 'react-materialize'
 import './ReposContainer.css';
 class ReposContainer extends Component {
   constructor(props) {
@@ -22,7 +22,8 @@ class ReposContainer extends Component {
   //
   submitHandler(ev) {
     ev.preventDefault()
-    fetchRepos(this.state.username).then(res => this.setState({ repos: res.data }))
+    fetchRepos(this.state.username)
+      .then(res => this.setState({ repos: res.data }))
   }
 
   //
@@ -44,3 +45,7 @@ class ReposContainer extends Component {
 }
 
 export default ReposContainer
+
+function newFunction() {
+  alert('erro');
+}
