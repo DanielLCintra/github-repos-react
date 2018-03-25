@@ -45,7 +45,3 @@ class ReposContainer extends Component {
 }
 
 export default ReposContainer
-
-function newFunction() {
-  alert('erro');
-}
